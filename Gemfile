@@ -24,9 +24,8 @@ gem 'jquery-rails'
 gem 'pg', '0.11.0'
 gem 'devise'
 gem 'rolify'
-gem 'paperclip'
 gem "cancan"
-gem 'paperclip'
+gem 'paperclip', '2.7.0'
 gem 'meta_search'
 #install will_paginate
 gem 'will_paginate', '3.0.pre4'

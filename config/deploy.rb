@@ -4,7 +4,7 @@ set :application, "foodcon"
 load "lib/deployer/deployer.rb"
 global_defaults 
 
-set :repository,  "git@github.com:fabianraf/andesconexion.git"
+set :repository,  "git@github.com:fabianraf/foodcon.git"
 set :scm, :git
 set :user, "deployer"  # The server's user for deploys
 ssh_options[:forward_agent] = true
