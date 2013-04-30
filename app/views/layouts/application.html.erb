@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html>
+<head>
+  <title><%= @title %></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  
+  <link rel="stylesheet" href="css/foundation.css" />
+  
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="row">
+    <div class="large-12 columns">
+
+    <!-- Navigation -->
+
+    <!-- Top Bar -->
+          <%= render :partial => "layouts/top_bar"%>
+    <!-- End Top Bar -->
+
+    <!-- End Navigation -->
+
+      <div class="row">
+
+      	<!-- Side Bar -->
+    	    <%= render :partial => "layouts/left_sidebar"%>
+        <!-- End Side Bar -->
+    
+    
+        <%= yield %>
+
+
+    <!-- Managed By -->
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel">
+                <div class="row">
+
+                  <div class="large-2 small-6 columns">
+                    <img src="http://placehold.it/300x300&text=Site Owner">
+                  </div>
+
+                  <div class="large-10 small-6 columns">
+                    <strong>Comentarios<hr/></strong>
+
+                    Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+    <!-- End Managed By -->
+
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Footer -->
+
+      <footer class="row">
+        <div class="large-12 columns"><hr />
+          <div class="row">
+
+            <div class="large-6 columns">
+              <p>&copy; Copyright</p>
+            </div>
+
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+    <!-- End Footer -->
+
+    </div>
+  </div>
+
+
+</body>
+</html>
