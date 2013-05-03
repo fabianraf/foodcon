@@ -35,6 +35,7 @@ gem "ckeditor"
 gem 'slugged'
 gem "therubyracer", '0.9.10'
 gem "ckeditor-rails"
+gem 'exception_notification'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
