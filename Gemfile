@@ -34,10 +34,7 @@ gem 'country-select'
 gem "ckeditor"
 gem 'slugged'
 gem "therubyracer", '0.9.10'
-gem "carrierwave"
-gem "mini_magick"
 gem "ckeditor-rails"
-gem 'rmagick'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
