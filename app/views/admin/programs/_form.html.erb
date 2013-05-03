@@ -1,0 +1,39 @@
+<%= javascript_include_tag 'ckeditor/ckeditor' %>
+<div class="form">
+<p>
+  <span class="req">max 100 symbols</span>
+  <label>Nombre <span>(Required Field)</span></label>
+  <%= form.text_field :name, :class => "field size1" %>
+</p>	
+<p>
+  <label>Descripción</label>
+  <%= form.cktext_area :description, :class => "field size4" %>
+</p>	
+<p>
+  <label>Tour Images</label><%= link_to "Add New", "javascript:void(0);", :class => "add_new_tour_image" %>
+</p>
+  <%= form.fields_for :program_images do |program_image|%>
+    <div class="tour_image">
+      <p>
+        <%= program_image.file_field :attachment %>
+        <% if File.exist?("#{program_image.object.attachment.path}") %>
+          <%= image_tag(program_image.object.attachment.url, :width=>'75px') %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+<%#*<p class="inline-field">%>
+        <%#*<label>Date</label>%>
+        <%#*<select class="field size2">%>
+                <%#*<option value="">23</option>%>
+        <%#*</select>%>
+        <%#*<select class="field size3">%>
+                <%#*<option value="">July</option>%>
+        <%#*</select>%>
+        <%#*<select class="field size3">%>
+                <%#*<option value="">2009</option>%>
+        <%#*</select>%>
+<%#*</p>%>
+
+        
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="imagetoolbar" content="false" />
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  <meta name="author" content="Net Theory" />
+  <!-- Optional meta tags -->
+  <!-- <meta name="revisit-after" content="1 day" /> -->
+  <!-- <meta name="robots" content="index,follow" /> -->
+  <!-- <meta http-equiv="pragma" content="no-cache" /> -->
+
+  <title>
+    <%- if @title -%>
+    <%= @title + " - AndesConexion Site Admin" %>
+    <%- else -%>
+    <%= "Foodcon: Administración" %>
+    <%- end -%>
+  </title>
+
+  <%= stylesheet_link_tag 'admin/style.css' -%>
+  <%= stylesheet_link_tag 'admin/pro_dropdown_2.css' -%>
+  <%= stylesheet_link_tag "css/jquery-ui-1.8.18.custom.css" %>
+  <%= javascript_include_tag "application" %>
+  <%= content_for :page_specific_javascript %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div id="container">
+    <%= render :partial => '/layouts/admin_bar' %>
+    <!-- Container -->
+    <div id="body">
+      <div class="shell">
+        <%= yield %>
+      </div>
+    </div>
+    <!-- End Container -->
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="shell">
+        <span class="left">&copy; 2013 - Fabián Aguirre</span>
+        <span class="right">
+          Design by <a href="#" target="_blank" title="">Fabian Aguirre</a>
+        </span>
+      </div>
+    </div>
+    <!-- End Footer -->
+  </div>
+</body>
+  
+
+</html>

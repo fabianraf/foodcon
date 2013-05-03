@@ -1,0 +1,68 @@
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+		<!-- Logo + Top Nav -->
+		<div id="top">
+			<h1><a href="#">Foodcon Ecuador</a></h1>
+			<div id="top-navigation">
+				Bienvenido <strong><%= current_user.email %></strong>
+				<span>|</span>
+				<a href="#">Ayuda</a>
+				<span>|</span>
+				<a href="#">Configuración de Usuario</a>
+				<span>|</span>
+				<%= link_to "Log Out", destroy_user_session_path %>
+			</div>
+		</div>
+		<!-- End Logo + Top Nav -->
+		<div class="top_menu">
+      <ul id="nav">
+		<!-- Dashboard not being used
+        <li class="top-left">
+          <%#= link_to content_tag(:span, "Dashboard", {:class => "down"}), "", :class => "top_link", :id => "dashboard" %>
+          <ul class="sub">
+            
+          </ul>
+        </li>
+		-->
+        <li class="<%= are_you_here?("standalone_pages") ? "selected" : "top-left"%>">
+          <%= link_to content_tag(:span, "¿Quiénes Somos?", {:class => "down"}), "quienes_somos", :class => "top_link", :id => "dashboard" %>
+          <ul class="sub">
+            
+          </ul>
+        </li>
+        <li class="<%= are_you_here?("categories") ? "selected" : "top-middle"%>">
+          <%= link_to content_tag(:span, "Programas", {:class => "down"}), admin_programs_path, :class => "top_link", :id => "dashboard" %>
+          <ul class="sub">
+            <%# @top_categories.each do |category| %>
+              <li><%#= link_to category.name, sub_categories_admin_category_path(category), :class => "fly" %></li>
+            <%# end %>
+          </ul>
+        </li>
+        <li class="<%= are_you_here?("tours") ? "selected" : "top-middle" %>">
+          <%#= link_to content_tag(:span, "Tours", {:class => "down"}), admin_tours_path, :class => "top_link", :id => "dashboard" %>
+          <ul class="sub">
+            <li><%#= link_to "Last Minute", admin_tours_path(:last_minute => true) %></li>
+            <li><%#= link_to "Regular Tours", admin_tours_path(:last_minute => false) %></li>
+          </ul>
+        </li>
+		<li class="<%= are_you_here?("hotels") ? "selected" : "top-middle" %>">
+          <%#= link_to content_tag(:span, "Hotels", {:class => "down"}), admin_hotels_path, :class => "top_link", :id => "dashboard" %>
+        </li>
+        </li>
+        <li class="<%= are_you_here?("assets") ? "selected" : "top-right" %>">
+          <%#= link_to content_tag(:span, "Galleries", {:class => "down"}), admin_assets_path, :class => "top_link", :id => "dashboard" %>
+        </li>
+		
+        <!-- Clients in Phase 2
+		<li class="<%= are_you_here?("clients") ? "selected" : "top-middle" %>">
+          <%#= link_to content_tag(:span, "Clients", {:class => "down"}), admin_clients_path, :class => "top_link", :id => "dashboard" %>
+          
+        </li>
+		-->
+     </ul>
+   </div>
+		
+	</div>
+</div>
+<!-- End Header -->

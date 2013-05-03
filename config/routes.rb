@@ -2,9 +2,13 @@ Foodcon::Application.routes.draw do
   devise_for :users
 
   root :to => 'homepage#index'
-  match "mision", :controller => "homepage", :action => "mision"
-  match "vision", :controller => "homepage", :action => "vision"
+  match "/mision", :controller => "homepage", :action => "mision"
+  match "/vision", :controller => "homepage", :action => "vision"
   resources :programs, :only => [:index, :show], :path => "programas"
+  match "/admin", :controller => "admin/standalone_pages", :action => "index"
+  namespace "admin" do
+    resources :programs
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
