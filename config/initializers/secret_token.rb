@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Foodcon::Application.config.secret_token = '89359840c567d78f86ea770972731ee8672f4ad21f499ba4466bbb793d15e47b4d391916569599bb46b2606d4cfb1ee1c8e130f7818f2fc95aa7aab8d2224162'
+Foodcon::Application.config.secret_token = '4e4eca0f10efb31410269ba21ee3a786d1c784529825b6afe12c49288728c36e58da88dvbv9hg8s99012883e10a2c31c7209654f172a58ff1871338ce33ab7981bbd9cb117a5c6'
