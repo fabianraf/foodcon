@@ -2,7 +2,7 @@
 <div class="small-nav">
         <a href="#">Dashboard</a>
         <span>&gt;</span>
-        Program
+        Programa
 </div>
 <!-- End Small Nav -->
 
@@ -26,14 +26,14 @@
           <div class="box">
             <!-- Box Head -->
             <div class="box-head">
-              <h2 class="left">Edit program</h2>
+              <h2 class="left">Editar programa</h2>
             </div>
             <!-- End Box Head -->
             <%= form_for([:admin, @program]) do |f| %>
               <%= render :partial => "form", :object => f %>
               <div class="buttons">
-                  <%= f.submit "Save" %>
-                  <%= link_to "Cancel", admin_programs_path %>
+                  <%= f.submit "Grabar" %>
+                  <%= link_to "Cancelar", admin_programs_path %>
               </div>
             <% end %>
           </div>
@@ -46,12 +46,14 @@
           <div class="box">
             <!-- Box Head -->
             <div class="box-head">
-              <h2>Management</h2>
+              <h2>Manejo</h2>
             </div>
             <!-- End Box Head-->
             <div class="box-content">
               <%= link_to(content_tag(:span, "Añadir programa"), new_admin_program_path, :class => 'add-button') %>
+              <div class="cl">&nbsp;</div>
               <%= link_to(content_tag(:span, "Eliminar programa"), admin_program_path(@program), :confirm => 'Are you sure?', :method => :delete, :title => 'Delete program') %>
+              
               <div class="cl">&nbsp;</div>
             </div>
           </div>

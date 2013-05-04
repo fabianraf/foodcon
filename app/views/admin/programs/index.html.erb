@@ -40,8 +40,8 @@
                   <td><h3><%= link_to program.name, admin_program_path(program) %></td>
                   <td><%= program.price %></td>
                   <td>
-                    <%= link_to 'Delete', admin_program_path(program), :confirm => 'Are you sure?', :method => :delete, :class => 'ico del', :title => 'Borrar programa'%>
-                    <%= link_to 'Edit', edit_admin_program_path(program), :class => 'ico edit', :title => 'Editar programa' %>
+                    <%= link_to 'Borrar', admin_program_path(program), :confirm => 'Are you sure?', :method => :delete, :class => 'ico del', :title => 'Borrar programa'%>
+                    <%= link_to 'Editar', edit_admin_program_path(program), :class => 'ico edit', :title => 'Editar programa' %>
                   </td>
                 <% end %>
               <% end %>
