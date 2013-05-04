@@ -2,7 +2,7 @@
 class HomepageController < ApplicationController
   def index
     @title = "Food Consulting Servicios de asesoría en Ecuador y Colombia"
-    @programs = Program.all
+    @programs = Program.limit(3)
   end
   def mision
     

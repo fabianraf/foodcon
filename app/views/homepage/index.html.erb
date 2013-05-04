@@ -5,30 +5,19 @@
 
   <% @programs.each do |program| %>
     <div class="large-4 small-6 columns">
-      <img src="assets/conferencia.jpeg">
+      <%= image_tag(program.program_images.first.attachment.url(:original), :width=>'250px') %>
       <div class="panel">
         <h5><%= link_to program.name, program_path(program) %></h5>
-        <h6 class="subheader"><%= program.description %></h6>
+        <h6 class="subheader"><%= ActionView::Base.full_sanitizer.sanitize(program.description) %></h6>
       </div>
     </div>
   <% end %>
-  <div class="large-4 small-6 columns">
-    <img src="assets/bpm.jpg">
-
-    <div class="panel">
-      <h5>Cursos de Buenas Prácticas de Manufactura</h5>
-      <h6 class="subheader">$300, 00 + IVA () </h6>
-    </div>
-  </div>
   
-  <div class="large-4 small-6 columns">
-    <img src="assets/nprod.jpg">
-
-    <div class="panel">
-      <h5>Cursos de Técnicas para el Desarrollo de Nuevos Productos Alimenticios </h5>
-      <h6 class="subheader">$600, 00 + IVA (incluye todos los materiales, coffee break y almuerzo ejecutivo para ambos días) </h6>
-    </div>
-  </div>
 </div>
+
+
+
+
+
 
     <!-- End Thumbnails -->

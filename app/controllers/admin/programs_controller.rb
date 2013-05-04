@@ -24,11 +24,12 @@ class Admin::ProgramsController < Admin::BaseController
   end
   
   def edit
-    @program = Program.find(params[:id])
+    @program = Program.find_using_slug(params[:id])
+    @program.program_images.build
   end
   
   def update
-    @program = Program.find(params[:id])
+    @program = Program.find_using_slug(params[:id])
     respond_to do |format|
       if @program.update_attributes(params[:program])
         flash[:notice] = 'Program was successfully updated.'
@@ -42,7 +43,7 @@ class Admin::ProgramsController < Admin::BaseController
   end
   
   def destroy
-    @program = Program.find(params[:id])
+    @program = Program.find_using_slug(params[:id])
     @program.destroy
     respond_to do |format|
       format.html { redirect_to admin_programs_path }

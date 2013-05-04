@@ -26,12 +26,14 @@
             <!-- End Box Head -->
             
             <dl class="show">
-		<dt>Descripción</dt>
-		<dd><%= @program.description.html_safe %></p></dd>
-		<dt>Precio</dt>
-		<dd><%= @program.price %></p></dd>
-		<dt>Image</dt>
-		<dd><%#= image_tag(@program.image.url, :width=>'250px') %></dd>
+          		<dt>Descripción</dt>
+          		<dd><%= @program.description.html_safe %></p></dd>
+          		<dt>Precio</dt>
+          		<dd><%= @program.price %></p></dd>
+          		<% if !@program.program_images.blank? %>
+            		<dt>Image</dt>
+            		<dd><%= image_tag(@program.program_images.first.attachment.url(:original), :width=>'250px') %></dd>
+          		<% end %>
             </dl>
             
           </div>

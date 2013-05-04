@@ -2,14 +2,14 @@
 <div class="small-nav">
         <a href="#">Dashboard</a>
         <span>&gt;</span>
-        Hotel
+        Program
 </div>
 <!-- End Small Nav -->
 
 <!-- Message Error -->
-<% if @hotel.errors.any? %>
+<% if @program.errors.any? %>
   <div class="msg msg-error">
-     <% @hotel.errors.full_messages.each do |msg| %>
+     <% @program.errors.full_messages.each do |msg| %>
        <p><strong><%= msg %></strong></p>
      <% end %>
   </div>
@@ -26,14 +26,14 @@
           <div class="box">
             <!-- Box Head -->
             <div class="box-head">
-              <h2 class="left">Edit Hotel</h2>
+              <h2 class="left">Edit program</h2>
             </div>
             <!-- End Box Head -->
-            <%= form_for([:admin, @hotel]) do |f| %>
+            <%= form_for([:admin, @program]) do |f| %>
               <%= render :partial => "form", :object => f %>
               <div class="buttons">
                   <%= f.submit "Save" %>
-                  <%= link_to "Cancel", admin_hotels_path %>
+                  <%= link_to "Cancel", admin_programs_path %>
               </div>
             <% end %>
           </div>
@@ -50,8 +50,8 @@
             </div>
             <!-- End Box Head-->
             <div class="box-content">
-              <%= link_to(content_tag(:span, "Add new Hotel"), new_admin_hotel_path, :class => 'add-button') %>
-              <%= link_to(content_tag(:span, "Delete Hotel"), admin_hotel_path(@hotel), :confirm => 'Are you sure?', :method => :delete, :title => 'Delete Hotel') %>
+              <%= link_to(content_tag(:span, "Añadir programa"), new_admin_program_path, :class => 'add-button') %>
+              <%= link_to(content_tag(:span, "Eliminar programa"), admin_program_path(@program), :confirm => 'Are you sure?', :method => :delete, :title => 'Delete program') %>
               <div class="cl">&nbsp;</div>
             </div>
           </div>
