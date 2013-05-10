@@ -1,10 +1,15 @@
 <%= javascript_include_tag 'ckeditor/ckeditor' %>
 <div class="form">
 <p>
-  <span class="req">max 100 symbols</span>
+  <span class="req">max 100 caracteres</span>
   <label>Nombre <span>(Required Field)</span></label>
   <%= form.text_field :name, :class => "field size1" %>
 </p>	
+<p>
+  <span class="req">max 255 caracteres</span>
+  <label>Descripción corta <span>(Homepage)</span></label>
+  <%= form.text_area :short_description, :class => "field size1" %>
+</p>  
 <p>
   <label>Descripción</label>
   <%= form.cktext_area :description, :class => "field size4" %>

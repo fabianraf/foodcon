@@ -28,6 +28,8 @@
             <dl class="show">
           		<dt>Descripción</dt>
           		<dd><%= @program.description.html_safe %></p></dd>
+          		<dt>Descripción corta (Homepage)</dt>
+              <dd><%= @program.short_description %></p></dd>
           		<dt>Precio</dt>
           		<dd><%= @program.price %></p></dd>
           		<% if !@program.program_images.blank? %>

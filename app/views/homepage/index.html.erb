@@ -8,7 +8,7 @@
       <%= image_tag(program.program_images.first.attachment.url(:original), :width=>'250px') unless program.program_images.blank? %>
       <div class="panel">
         <h5><%= link_to program.name, program_path(program) %></h5>
-        <h6 class="subheader"><%= ActionView::Base.full_sanitizer.sanitize(program.description) %></h6>
+        <h6 class="subheader"><%= program.short_description %></h6>
       </div>
     </div>
   <% end %>
