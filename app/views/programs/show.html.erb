@@ -9,7 +9,7 @@
       <div>
         <%= @program.description.html_safe %>
       </div>
-        <%= image_tag(@program.program_images.first.attachment.url(:original)) %>
+        <%= image_tag(@program.program_images.first.attachment.url(:original)) unless @program.program_images.blank? %>
       
     </div>
   </div>
