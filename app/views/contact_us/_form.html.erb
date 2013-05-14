@@ -1,0 +1,24 @@
+<div class="large-12 columns">     
+  <table width="460" cellspacing="0" cellpadding="0" border="0" align="center" class="boat_statistics">
+     <tbody><tr>
+       <td width="148"><p><strong>Nombre Completo:</strong></p></td>
+       <td width="292"><p><%= form.text_field :full_name, :class => "field size1" %></p></td>
+     </tr>
+     <tr>
+       <td><p><strong>E-mail:</strong></p></td>
+       <td><p><%= form.text_field :email, :class => "field size1" %></p></td>
+     </tr>
+     <tr>
+       <td><p><strong>Nacionalidad:</strong></p></td>
+       <td><p><%= form.text_field :nationality, :class => "field size1"  %></p></td>
+     </tr>
+     <tr>
+       <td><p><strong>Programa de su interés:</strong></p></td>
+       <td><p><%= form.select :program_id, Program.all.map {|i| [i.name, i.id]  }, {:include_blank => true} %></p></td>
+     </tr>
+     <tr>
+        <td><p><strong>Explícanos tu inquietud:</strong></p></td>
+        <td><p><%= form.text_area :body %></p></td>
+      </tr>
+   </tbody></table>
+</div>

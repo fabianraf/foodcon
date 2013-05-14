@@ -5,6 +5,11 @@ Foodcon::Application.routes.draw do
   match "/mision", :controller => "homepage", :action => "mision"
   match "/vision", :controller => "homepage", :action => "vision"
   resources :programs, :only => [:index, :show], :path => "programas"
+  resources :contact_us, :only => [:index, :create, :new], :path => "contactenos" do
+    collection do
+      get 'gracias'
+    end
+  end
   match "/admin", :controller => "admin/standalone_pages", :action => "index"
   namespace "admin" do
     resources :programs

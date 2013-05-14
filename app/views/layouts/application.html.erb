@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<html>
-<head>
-  <title><%= @title %></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title>Food Consulting:  <%= @title %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
   
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<div class="row">
-    <div class="large-12 columns">
-
-    <!-- Navigation -->
-
-    <!-- Top Bar -->
-          <%= render :partial => "layouts/top_bar"%>
-    <!-- End Top Bar -->
-
-    <!-- End Navigation -->
-
-      <div class="row">
-
-      	<!-- Side Bar -->
-    	    <%= render :partial => "layouts/left_sidebar"%>
-        <!-- End Side Bar -->
-    
-    
-        <%= yield %>
-
-    <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
-      <!-- Managed By -->
-          <%= render :partial => "layouts/comments"%>
-      <!-- End Managed By -->
-    <% end %>
-          </div>
+        <!-- Top Bar -->
+        <%= render :partial => "layouts/top_bar"%>
+        <!-- End Top Bar --> 
+        <!-- End Navigation -->
+ 
+        <div class="row">
+  
+           <!-- Side Bar -->
+         <%= render :partial => "layouts/left_sidebar"%>
+          <!-- End Side Bar -->
+          <%= yield %>
+          <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
+            <%= render :partial => "layouts/comments"%>
+          <% end %>
         </div>
       </div>
+    </div>
 
 
     <!-- Footer -->
@@ -68,7 +68,5 @@
 
     </div>
   </div>
-
-
-</body>
+  </body>
 </html>
