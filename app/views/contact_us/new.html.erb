@@ -1,9 +1,28 @@
-<div class="large-8 columns">
-  <div class="row">
-    <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
-      <%= render :partial => "form", :object => f %>
-      <div class="buttons">
-          <%= f.submit "Enviar" %>
+<!-- Thumbnails -->
+
+    <div class="large-8 columns">
+      <div class="row">
+  <div class="large-12 columns">
+          <div class="panel">
+            <div class="row">
+
+              <div class="large-2 small-6 columns">
+                <img src="/assets/mail.png">
+              </div>
+
+              <div class="large-10 small-6 columns">
+                <strong>Contactenos<hr/></strong>
+                  <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
+                    <%= render :partial => "form", :object => f %>
+                    <div class="buttons">
+                        <%= f.submit "Enviar" %>
+                    </div>
+                  <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
-    <% end %>
-  </div>
+
+    <!-- End Thumbnails -->

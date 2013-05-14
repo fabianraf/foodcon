@@ -5,7 +5,7 @@ class Notifier < ActionMailer::Base
   
   def send_information(contact_us)    
     if Rails.env.production?
-      @emails = TEST_RECIPIENT
+      @emails = "davidaguirrerodriguez@gmail.com"
     else
       @emails = TEST_RECIPIENT
     end    
