@@ -9,15 +9,27 @@
        <td><p><%= form.text_field :email, :class => "field size1" %></p></td>
      </tr>
      <tr>
-       <td><p><strong>Nacionalidad:</strong></p></td>
-       <td><p><%= form.text_field :nationality, :class => "field size1"  %></p></td>
+       <td><p><strong>País:</strong></p></td>
+       <td><p> <%= form.country_select(:country, ["Ecuador"]) %></p></td>
      </tr>
      <tr>
-       <td><p><strong>Programa de su interés:</strong></p></td>
-       <td><p><%= form.select :program_id, Program.all.map {|i| [i.name, i.id]  }, {:include_blank => true} %></p></td>
+       <td><p><strong>Ciudad:</strong></p></td>
+       <td><p><%= form.text_field :city, :class => "field size1"  %></p></td>
      </tr>
      <tr>
-        <td><p><strong>Explícanos tu inquietud:</strong></p></td>
+       <td><p><strong>Provincia:</strong></p></td>
+       <td><p><%= form.text_field :province, :class => "field size1"  %></p></td>
+     </tr>
+     <tr>
+       <td><p><strong>Información de su interés:</strong></p></td>
+       <td>
+         <p>
+            <%= form.select :program_id, options_for_interests.map { |program| [program[1], program[0]]}, {:include_blank => true}, {} %> 
+         </p>
+       </td>
+     </tr>
+     <tr>
+        <td><p><strong>Explíquenos su inquietud:</strong></p></td>
         <td><p><%= form.text_area :body, {:rows => 10} %></p></td>
       </tr>
    </tbody></table>

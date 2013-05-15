@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514004232) do
+ActiveRecord::Schema.define(:version => 20130515005644) do
 
   create_table "assets", :force => true do |t|
     t.string   "attachment_content_type"
@@ -26,12 +26,14 @@ ActiveRecord::Schema.define(:version => 20130514004232) do
 
   create_table "contact_us", :force => true do |t|
     t.string   "full_name"
-    t.string   "nationality"
+    t.string   "city"
     t.string   "email"
     t.integer  "program_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "country"
+    t.string   "province"
   end
 
   create_table "programs", :force => true do |t|

@@ -8,4 +8,15 @@ module ApplicationHelper
 			return (controller.controller_name.downcase == control and controller.action_name.downcase == act)
 		end
 	end
+	
+	def options_for_interests
+	  programs = Program.all
+    interests = Hash.new
+    programs.each do |program| 
+      interests[program.id] = program.name
+    end
+    interests[100] = "Otro"
+    return interests.sort_by {|id, name| id}
+  end
+	
 end

@@ -1,7 +1,7 @@
 <div class="large-4 small-12 columns">
 
-	<img src="/assets/homepage_images/SmallLogo.jpg">
-	
+	<%= link_to "/" do %><img src="/assets/homepage_images/SmallLogo.jpg">
+	<% end %>
 	<div class="hide-for-small panel">
 		<h3>Contáctenos</h3>
 		<h5 class="subheader"> 
@@ -13,6 +13,12 @@
 	<div class="panel">
 		<img src="/assets/mundohelado.jpg" width="240" />
 	</div> </a>
-
+	<% if 1 ==2 %>
+  	<div class="panel">
+    	<!--Facebook code -->  
+      <div class="fb-like" data-href="https://www.facebook.com/pages/Food-Consulting/300068603454072?ref=ts&amp;fref=ts" data-send="false" data-width="250" data-show-faces="true"></div>
+      <!-- End Facebook code -->
+    </div>
+  <% end %>
 </div>
 

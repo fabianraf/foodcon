@@ -14,15 +14,33 @@ Estimado David,
     </tr>
     <tr>
       <td>
-        Nacionalidad:
+        País:
       </td>                    
-      <td><%= @contact_us.nationality %></td>
+      <td><%= @contact_us.country %></td>
+    </tr>
+    <tr>
+      <td>
+        Ciudad:
+      </td>                    
+      <td><%= @contact_us.city %></td>
+    </tr>
+    <tr>
+      <td>
+        Provincia
+      </td>                    
+      <td><%= @contact_us.province %></td>
     </tr>
     <tr>
       <td>
         Programa:
       </td>                    
-      <td><%= @contact_us.program.name if !@contact_us.program.nil? %></td>
+      <td>
+        <% if @contact_us.program_id == 100 %>
+          Otro
+        <% else %>
+          <%= @contact_us.program.name if !@contact_us.program.nil? %>
+        <% end %>
+      </td>
     </tr>                   
     <tr>
       <td>
