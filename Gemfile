@@ -13,9 +13,9 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-  gem 'zurb-foundation'
+  
 end
-
+gem 'zurb-foundation'
 gem 'jquery-rails'
 gem "therubyracer", :require => 'v8'
 gem 'pg', '0.11.0'
