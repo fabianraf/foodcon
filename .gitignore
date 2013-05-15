@@ -7,3 +7,4 @@ vendor/**/*
 public/system/uploads/**
 test/**
 .DS_Store
+/nbproject/private/
