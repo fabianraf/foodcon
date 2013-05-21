@@ -188,6 +188,8 @@ GEM
     warden (1.1.1)
       rack (>= 1.0)
     will_paginate (3.0.pre)
+    zurb-foundation (4.1.6)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -221,3 +223,4 @@ DEPENDENCIES
   therubyracer
   uglifier
   will_paginate (= 3.0.pre)
+  zurb-foundation
