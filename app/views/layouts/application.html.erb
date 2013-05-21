@@ -7,6 +7,9 @@
   <head>
   	<meta charset="utf-8" />
 
+    <%= javascript_include_tag "application" %>
+  	<%= stylesheet_link_tag    "application" %>
+    <%= csrf_meta_tags %>
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
@@ -93,8 +96,6 @@
         End Google Analytics
         ============================================================== -->
     <% end %>
-     <%= javascript_include_tag "application" %>
-  	<%= stylesheet_link_tag    "application" %>
-    <%= csrf_meta_tags %>
+     
   </body>
 </html>

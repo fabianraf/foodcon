@@ -7,16 +7,6 @@ gem 'rails', '3.1.0'
 
 gem 'json'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
-  gem 'zurb-foundation'
-  gem 'compass-rails'
-end
-
 gem 'jquery-rails'
 gem "therubyracer", :require => 'v8'
 gem 'pg', '0.11.0'
@@ -50,3 +40,11 @@ gem 'capistrano', "2.9.0"
 # To use debugger
 # gem 'ruby-debug'
 
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+  gem 'zurb-foundation', '~> 4.0.0'
+end
