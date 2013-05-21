@@ -11,5 +11,4 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require foundation
-//= require custom.modernizr.js
 $(document).foundation();
