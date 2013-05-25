@@ -24,7 +24,7 @@ Foodcon::Application.configure do
 
   # Do not compress assets
   config.assets.compress = true
-  config.assets.compile = true
+  #config.assets.compile = true
 
   config.active_support.deprecation = :notify
   config.action_mailer.delivery_method = :smtp
