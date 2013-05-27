@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   
   TEST_RECIPIENT = ["fabianraf@gmail.com"]
   PRODUCTION_RECIPIENT = ["info@foodcon.net", "davidaguirrerodriguez@gmail.com"]
-  default :from => "info@foodnet.net"
+  default :from => "info@foodcon.net"
   
   def send_information(contact_us)    
     if Rails.env.production?
