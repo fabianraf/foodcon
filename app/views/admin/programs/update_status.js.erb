@@ -1,0 +1,9 @@
+<% if @validated %>
+  <% if @program.is_present_in_homepage? %>
+    $("#td_program_id_<%= @program.id %>").children("a").attr("class", "action-activate");
+  <% else %>
+    $("#td_program_id_<%= @program.id %>").children("a").attr("class", "action-deactivate");
+  <% end %>
+<% else %>
+    alert("Sólo pueden haber 3 programas activos en el homepage.")
+<% end %>    

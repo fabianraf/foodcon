@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515005644) do
+ActiveRecord::Schema.define(:version => 20130604031628) do
 
   create_table "assets", :force => true do |t|
     t.string   "attachment_content_type"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(:version => 20130515005644) do
     t.string   "price"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "cached_slug"
     t.string   "short_description"
+    t.boolean  "is_present_in_homepage"
   end
 
   add_index "programs", ["cached_slug"], :name => "index_programs_on_cached_slug"

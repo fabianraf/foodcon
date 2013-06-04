@@ -12,7 +12,11 @@ Foodcon::Application.routes.draw do
   end
   match "/admin", :controller => "admin/standalone_pages", :action => "index"
   namespace "admin" do
-    resources :programs
+    resources :programs do
+      member do
+        put "update_status"
+      end
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

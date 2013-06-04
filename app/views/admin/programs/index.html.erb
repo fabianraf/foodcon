@@ -29,16 +29,26 @@
           <div class="table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <th width="13"><input type="checkbox" class="checkbox" /></th>
                 <th>Nombre</th>
                 <th>Precio</th>
+                <th width="13">En Homepage?</th>
                 <th width="110" class="ac">Content Control</th>
               </tr>
               <% @programs.each do |program| %>
                 <%= content_tag_for(:tr, program, :class=> "#{cycle("", "odd")}") do %>
-                 <td><input type="checkbox" class="checkbox" /></td>
                   <td><h3><%= link_to program.name, admin_program_path(program) %></td>
                   <td><%= program.price %></td>
+                  <td class="status" id="td_program_id_<%= program.id %>">
+                   <% if program.is_present_in_homepage? %>
+                    <%= link_to "activate", update_status_admin_program_path(program), :method => :put,
+                       :class => 'action-activate', :title => 'Estado: Activo. Click para desactivar.', :remote => true
+                    %>
+                   <% else %>
+                      <%= link_to "de-activate", update_status_admin_program_path(program), :method => :put,
+                       :class => 'action-deactivate', :title => 'Estado: Inactivo. Click para activar.', :remote => true
+                      %>
+                   <% end %>
+                  </td>
                   <td>
                     <%= link_to 'Borrar', admin_program_path(program), :confirm => 'Are you sure?', :method => :delete, :class => 'ico del', :title => 'Borrar programa'%>
                     <%= link_to 'Editar', edit_admin_program_path(program), :class => 'ico edit', :title => 'Editar programa' %>

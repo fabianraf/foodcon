@@ -2,7 +2,7 @@
 class HomepageController < ApplicationController
   def index
     @title = "Servicios de asesoría en Ecuador y Colombia"
-    @programs = Program.limit(3)
+    @programs = Program.actives
   end
   def mision
     @title = "Misión"

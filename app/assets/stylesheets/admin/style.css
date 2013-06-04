@@ -468,17 +468,27 @@ li .selected{
 	height: 123px;
 	overflow: hidden;
 	margin: 5px 12px 5px 0;
-
-	.photo-wrapper {
+}
+ .simple-photo .photo-wrapper {
 		max-height: 105px;
 		overflow: hidden;
-		
-		img {
+ }
+	.simple-photo .photo-wrapper	img {
 			width: 140px;
 			height: auto;
 		}
-	}
-
+    
+td.status a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  overflow: hidden;
+}    
+.action-activate {
+  background: transparent url("../images/status-active.png") top left no-repeat;
 }
 
-
+.action-deactivate {
+  background: transparent url("../images/status-inactive.png") top left no-repeat;
+}
