@@ -36,8 +36,8 @@ Foodcon::Application.configure do
     :domain => "gmail.com",
     :authentication => "plain",
     :enable_starttls_auto =>  true,
-    :user_name => "fabianraf",
-    :password => "elsensei."
+    :user_name => "*********",
+    :password => "*********"
   }
   
 end
