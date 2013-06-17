@@ -27,3 +27,11 @@ production:
   pool: 5
   username: postgres
   password: root
+
+preview:
+  adapter: postgresql
+  encoding: unicode
+  database: foodcon_preview
+  pool: 5
+  username: postgres
+  password: root
