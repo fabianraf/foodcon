@@ -2,19 +2,23 @@ Foodcon::Application.routes.draw do
   devise_for :users
 
   root :to => 'homepage#index'
-  match "/mision", :controller => "homepage", :action => "mision"
-  match "/vision", :controller => "homepage", :action => "vision"
   resources :programs, :only => [:index, :show], :path => "programas"
   resources :contact_us, :only => [:index, :create, :new], :path => "contactenos" do
     collection do
       get 'gracias'
     end
   end
-  match "/admin", :controller => "admin/standalone_pages", :action => "index"
+  resources :company_infos, :path => "informacion-de-la-compania" , :only => [:show]
+  match "/admin", :controller => "admin/company_infos", :action => "index"
   namespace "admin" do
     resources :programs do
       member do
         put "update_status"
+      end
+    end
+    resources :company_infos, :path => "informacion-compania" do
+      member do
+        put "update_order"
       end
     end
   end

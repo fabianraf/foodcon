@@ -1,0 +1,34 @@
+<%= javascript_include_tag 'ckeditor/ckeditor' %>
+<div class="form">
+<p>
+  <span class="req">max 100 caracteres</span>
+  <label>Título <span>(Required Field)</span></label>
+  <%= form.text_field :title, :class => "field size1" %>
+</p>	
+
+<p>
+  <label>Meta Keywords<span>(Separados por coma.)</span></label>
+  <%= form.text_area :meta_keywords, :class => "field size4" %>
+</p>
+
+<p>
+  <label>Descripción</label>
+  <%= form.cktext_area :description, :class => "field size4" %>
+</p>	
+<p>
+  <label>Imagen</label><%#= link_to "Añadir Imagen", "javascript:void(0);", :class => "add_new_tour_image" %>
+</p>
+  <%= form.fields_for :company_info_image do |company_info_image|%>
+    <div class="tour_image">
+      <p>
+        <%= company_info_image.file_field :attachment %>
+        <% if File.exist?("#{company_info_image.object.attachment.path}") %>
+          <%= image_tag(company_info_image.object.attachment.url, :width=>'75px') %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+
+
+        
+</div>

@@ -1,0 +1,23 @@
+<!-- Thumbnails -->
+
+    <div class="large-8 columns">
+      <div class="row">
+  <div class="large-12 columns">
+          <div class="panel">
+            <div class="row">
+
+              <div class="large-2 small-6 columns">
+                <%= image_tag(@company_info.company_info_image.attachment.url(:original)) unless @company_info.company_info_image.blank? %>
+              </div>
+
+              <div class="large-10 small-6 columns">
+                <strong><%= @company_info.title %><hr/></strong>
+                <%= @company_info.description.html_safe %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- End Thumbnails -->

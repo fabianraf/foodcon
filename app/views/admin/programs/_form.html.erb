@@ -6,6 +6,10 @@
   <%= form.text_field :name, :class => "field size1" %>
 </p>	
 <p>
+  <label>Meta Keywords<span>(Separados por coma.)</span></label>
+  <%= form.text_area :meta_keywords, :class => "field size4" %>
+</p>
+<p>
   <span class="req">max 255 caracteres</span>
   <label>Descripción corta <span>(Homepage)</span></label>
   <%= form.text_area :short_description, :class => "field size1" %>

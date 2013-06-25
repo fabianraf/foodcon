@@ -2,7 +2,7 @@
 <div class="small-nav">
         <a href="#">Dashboard</a>
         <span>&gt;</span>
-        Programa
+        Información de la Compañía
 </div>
 <!-- End Small Nav -->
 
@@ -17,24 +17,20 @@
           <div class="box">
             <!-- Box Head -->
             <div class="box-head">
-              <h2 class="left"><%= @program.name %></h2>
+              <h2 class="left"><%= @company_info.title %></h2>
               <div class="right">
-                <%= link_to 'Eliminar', admin_program_path(@program), :confirm => 'Estás seguro?', :method => :delete, :class => 'ico del', :title => 'Eliminar programa'%>
-                <%= link_to 'Editar', edit_admin_program_path(@program), :class => 'ico edit', :title => 'Editar programa' %>
+                <%= link_to 'Eliminar', admin_company_info_path(@company_info), :confirm => 'Estás seguro?', :method => :delete, :class => 'ico del', :title => 'Eliminar programa'%>
+                <%= link_to 'Editar', edit_admin_company_info_path(@company_info), :class => 'ico edit', :title => 'Editar Info.' %>
               </div>
             </div>
             <!-- End Box Head -->
             
             <dl class="show">
           		<dt>Descripción</dt>
-          		<dd><%= @program.description.html_safe %></p></dd>
-          		<dt>Descripción corta (Homepage)</dt>
-              <dd><%= @program.short_description %></p></dd>
-          		<dt>Precio</dt>
-          		<dd><%= @program.price %></p></dd>
-          		<% if !@program.program_images.blank? %>
+          		<dd><%= @company_info.description.html_safe %></p></dd>
+          		<% if !@company_info.company_info_image.blank? %>
             		<dt>Image</dt>
-            		<dd><%= image_tag(@program.program_images.first.attachment.url(:original), :width=>'250px') %></dd>
+            		<dd><%= image_tag(@company_info.company_info_image.attachment.url(:original), :width=>'250px') %></dd>
           		<% end %>
             </dl>
             
@@ -52,7 +48,7 @@
             </div>
             <!-- End Box Head-->
             <div class="box-content">
-              <%= link_to(content_tag(:span, "Añadir programa"), new_admin_program_path, :class => 'add-button') %>
+              <%= link_to(content_tag(:span, "Añadir información"), new_admin_program_path, :class => 'add-button') %>
               <div class="cl">&nbsp;</div>
             </div>
           </div>

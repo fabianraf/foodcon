@@ -1,0 +1,64 @@
+<!-- Small Nav -->
+<div class="small-nav">
+        <a href="#">Dashboard</a>
+        <span>&gt;</span>
+        Información de la Compañía
+</div>
+<!-- End Small Nav -->
+
+<!-- Message Error -->
+<% if @company_info.errors.any? %>
+  <div class="msg msg-error">
+     <% @company_info.errors.full_messages.each do |msg| %>
+       <p><strong><%= msg %></strong></p>
+     <% end %>
+  </div>
+<% end %>
+<!-- End Message Error -->
+<br />
+<!-- Main -->
+<div id="main">
+  <div class="cl">&nbsp;</div>
+
+  <!-- Content -->
+  <div id="content">
+    <!-- Box -->
+    <div class="box">
+      <!-- Box Head -->
+      <div class="box-head">
+        <h2>Añadir nueva información</h2>
+      </div>
+      <!-- End Box Head -->
+      <%= form_for([:admin, @company_info]) do |f| %>
+        <%= render :partial => "form", :object => f %>
+        <div class="buttons">
+            <%= f.submit "Grabar" %>
+            <%= link_to "Cancelar", admin_company_infos_path %>
+        </div>
+      <% end %>
+    </div>
+    <!-- End Box -->
+  </div>
+  <!-- End Content -->
+  <!-- Sidebar -->
+  <div id="sidebar">
+      <!-- Box -->
+      <div class="box">
+        <!-- Box Head -->
+        <div class="box-head">
+          <h2>Manejo</h2>
+        </div>
+        <!-- End Box Head-->
+        <div class="box-content">
+          <%= link_to(content_tag(:span, "Añadir Información"), new_admin_company_info_path, :class => 'add-button') %>
+          
+        </div>
+      </div>
+      <!-- End Box -->
+    </div>
+  <!-- End Sidebar -->
+
+  <div class="cl">&nbsp;</div>			
+</div>
+<!-- Main -->
+	

@@ -1,0 +1,95 @@
+<div class="shell">
+  <!-- Small Nav -->
+  <div class="small-nav">
+    <a href="#">Dashboard</a>
+    <span>&gt;</span>
+    Información de FoodCon
+  </div>
+  <!-- End Small Nav -->
+  <br />
+  <!-- Main -->
+  <div id="main">
+    <div class="cl">&nbsp;</div>
+
+    <!-- Content -->
+    <div id="content">
+      <!-- Box -->
+      <div class="box">
+        <!-- Box Head -->
+        <div class="box-head">
+          <h2 class="left">Información</h2>
+          <div class="right">
+            <label>buscar información</label>
+            <input type="text" class="field small-field" />
+            <input type="submit" class="button" value="search" />
+          </div>
+        </div>
+        <!-- End Box Head -->	
+          <!-- Table -->
+          <div class="table">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Titulo</th>
+                <th width="110" class="ac">Content Control</th>
+              </tr>
+              <% @company_infos.each do |company_info| %>
+                <%= content_tag_for(:tr, company_info, :class=> "#{cycle("", "odd")}") do %>
+                  <td><h3><%= link_to company_info.title, admin_company_info_path(company_info) %></td>
+                  <td>
+                    <%= link_to 'Borrar', admin_company_info_path(company_info), :confirm => 'Estás seguro?', :method => :delete, :class => 'ico del', :title => 'Borrar company_infoa'%>
+                    <%= link_to 'Editar', edit_admin_company_info_path(company_info), :class => 'ico edit', :title => 'Editar info.' %>
+                  </td>
+                <% end %>
+              <% end %>
+            </table>
+
+            <!-- Pagging -->
+            <div class="pagging">
+              <%= paginate @company_infos %>
+            </div>
+            <!-- End Pagging -->
+          </div>
+          <!-- Table -->
+      </div>
+      <!-- End Box -->
+    </div>
+    <!-- End Content -->
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <!-- Box -->
+      <div class="box">
+        <!-- Box Head -->
+        <div class="box-head">
+          <h2>Manejo</h2>
+        </div>
+        <!-- End Box Head-->
+        <div class="box-content">
+          <%= link_to(content_tag(:span, "Añadir Info."), new_admin_company_info_path, :class => 'add-button') %>
+          <div class="cl">&nbsp;</div>
+          <p class="select-all"><input type="checkbox" class="checkbox" /><label>select all</label></p>
+          <p><a href="#">Delete Selected</a></p>
+          <!-- Sort -->
+          <div class="sort">
+            <label>Sort by</label>
+            <select class="field">
+                    <option value="">Title</option>
+            </select>
+            <select class="field">
+                    <option value="">Date</option>
+            </select>
+            <select class="field">
+                    <option value="">Author</option>
+            </select>
+          </div>
+          <!-- End Sort -->
+        </div>
+      </div>
+      <!-- End Box -->
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="cl">&nbsp;</div>			
+  </div>
+  <!-- Main -->
+</div>

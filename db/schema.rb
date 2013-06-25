@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604031628) do
+ActiveRecord::Schema.define(:version => 20130625023137) do
 
   create_table "assets", :force => true do |t|
     t.string   "attachment_content_type"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20130604031628) do
     t.datetime "attachment_updated_at"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.integer  "company_info_id"
+  end
+
+  create_table "company_infos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sort_order"
+    t.string   "cached_slug"
+    t.text     "meta_keywords"
   end
 
   create_table "contact_us", :force => true do |t|
@@ -47,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20130604031628) do
     t.string   "cached_slug"
     t.string   "short_description"
     t.boolean  "is_present_in_homepage"
+    t.text     "meta_keywords"
   end
 
   add_index "programs", ["cached_slug"], :name => "index_programs_on_cached_slug"
