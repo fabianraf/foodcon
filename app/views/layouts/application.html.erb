@@ -15,8 +15,13 @@
     
     <%= stylesheet_link_tag    "normalize.css" %>
     <%= stylesheet_link_tag    "foundation.css" %>
+    <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
+      <%= stylesheet_link_tag    "carousel.css" %>
+    <% end %>
     
     <%= javascript_include_tag "custom.modernizr.js" %>
+    
+		
   	<%= csrf_meta_tags %>
   	
   </head>
@@ -98,5 +103,33 @@
     <% end %>
   <%= javascript_include_tag "foundation.min.js" %>
   <%= javascript_include_tag "application" %>
+  <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
+    <%= javascript_include_tag "js/jquery-1.7.min.js" %>
+    <%= javascript_include_tag "jquery.featureCarousel.js" %>
+        <script type="text/javascript">
+        $(document).ready(function() {
+          var carousel = $("#carousel").featureCarousel({
+            // include options like this:
+            // (use quotes only for string values, and no trailing comma after last option)
+            // option: value,
+            // option: value
+          });
+
+          $("#but_prev").click(function () {
+            carousel.prev();
+          });
+          $("#but_pause").click(function () {
+            carousel.pause();
+          });
+          $("#but_start").click(function () {
+            carousel.start();
+          });
+          $("#but_next").click(function () {
+            carousel.next();
+          });
+        });
+      </script>
+    <% end %>
+    <%= content_for :page_specific_javascript %>
   </body>
 </html>
