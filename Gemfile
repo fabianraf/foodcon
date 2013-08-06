@@ -27,7 +27,7 @@ gem "rails3-generators"
 gem "awesome_nested_set"
 #gem "impressionist"          
 gem "nokogiri", "1.5.2" 
-gem 'exception_notification'
+#gem 'exception_notification'
 gem 'roadie'
 gem 'slugged'
 gem 'cocaine', '0.3.2'

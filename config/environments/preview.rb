@@ -26,13 +26,13 @@ Foodcon::Application.configure do
   #config.assets.compress = true
   #config.assets.compile = true
 
-  config.active_support.deprecation = :notify
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "[Foodcon Preview] ",
-    :sender_address => %{"notifier" <notifier@example.com>},
-    :exception_recipients => %w{fabianraf@gmail.com}
-    
-  config.action_mailer.default_url_options = { :host => 'preview.foodcon.net' }
+#  config.active_support.deprecation = :notify
+#  config.action_mailer.delivery_method = :smtp
+#  config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
+#  config.middleware.use ExceptionNotifier,
+#    :email_prefix => "[Foodcon Preview] ",
+#    :sender_address => %{"notifier" <notifier@example.com>},
+#    :exception_recipients => %w{fabianraf@gmail.com}
+#    
+#  config.action_mailer.default_url_options = { :host => 'preview.foodcon.net' }
 end
