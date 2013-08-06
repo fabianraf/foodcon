@@ -15,7 +15,7 @@ gem 'rolify'
 gem "cancan"
 gem 'paperclip', '2.7.0'
 gem 'meta_search'
-#install will_paginate
+##install will_paginate
 gem 'will_paginate', '3.0.pre'
 gem 'kaminari'
 gem 'country-select'
@@ -25,16 +25,17 @@ gem "mini_magick"
 gem "ckeditor-rails"
 gem "rails3-generators"
 gem "awesome_nested_set"
-gem "impressionist"          
+#gem "impressionist"          
+gem "nokogiri", "1.5.2" 
 gem 'exception_notification'
 gem 'roadie'
 gem 'slugged'
 gem 'cocaine', '0.3.2'
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano', "2.9.0"
+## Use unicorn as the web server
+## gem 'unicorn'
+#
+## Deploy with Capistrano
+#gem 'capistrano', "2.9.0"
 
 # To use debugger
 # gem 'ruby-debug'
@@ -47,3 +48,4 @@ group :assets do
   gem 'uglifier'
   gem 'zurb-foundation', '~> 4.1.2'
 end
+
