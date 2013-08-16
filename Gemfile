@@ -35,7 +35,9 @@ gem 'cocaine', '0.3.2'
 ## gem 'unicorn'
 #
 ## Deploy with Capistrano
-#gem 'capistrano', "2.9.0"
+group :development do
+  gem 'capistrano', "2.9.0"
+end
 
 # To use debugger
 # gem 'ruby-debug'
