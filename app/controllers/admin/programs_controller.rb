@@ -7,7 +7,7 @@ class Admin::ProgramsController < Admin::BaseController
     @program.program_images.build
   end
   def show
-    @program = Program.find_using_slug(params[:id])
+    @program = Program.find(params[:id])
   end
   def create
     @program = Program.new(params[:program])
@@ -24,12 +24,12 @@ class Admin::ProgramsController < Admin::BaseController
   end
   
   def edit
-    @program = Program.find_using_slug(params[:id])
+    @program = Program.find(params[:id])
     @program.program_images.build
   end
   
   def update
-    @program = Program.find_using_slug(params[:id])
+    @program = Program.find(params[:id])
     respond_to do |format|
       if @program.update_attributes(params[:program])
         flash[:notice] = 'Program was successfully updated.'
@@ -43,7 +43,7 @@ class Admin::ProgramsController < Admin::BaseController
   end
   
   def destroy
-    @program = Program.find_using_slug(params[:id])
+    @program = Program.find(params[:id])
     @program.destroy
     respond_to do |format|
       format.html { redirect_to admin_programs_path }
@@ -52,7 +52,7 @@ class Admin::ProgramsController < Admin::BaseController
   end
   
   def update_status
-    @program = Program.find_using_slug(params[:id])
+    @program = Program.find(params[:id])
     
     if @program.is_present_in_homepage?
       @program.is_present_in_homepage = false

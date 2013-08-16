@@ -9,7 +9,7 @@ class Admin::CompanyInfosController < Admin::BaseController
   end
   
   def show
-    @company_info = CompanyInfo.find_using_slug(params[:id])
+    @company_info = CompanyInfo.find(params[:id])
   end
   
   def create
@@ -27,12 +27,12 @@ class Admin::CompanyInfosController < Admin::BaseController
   end
   
   def edit
-    @company_info = CompanyInfo.find_using_slug(params[:id])
+    @company_info = CompanyInfo.find(params[:id])
   
   end
   
   def update
-    @company_info = CompanyInfo.find_using_slug(params[:id])
+    @company_info = CompanyInfo.find(params[:id])
     respond_to do |format|
       if @company_info.update_attributes(params[:company_info])
         flash[:notice] = 'CompanyInfo was successfully updated.'
@@ -46,7 +46,7 @@ class Admin::CompanyInfosController < Admin::BaseController
   end
   
   def destroy
-    @company_info = CompanyInfo.find_using_slug(params[:id])
+    @company_info = CompanyInfo.find(params[:id])
     @company_info.destroy
     respond_to do |format|
       format.html { redirect_to admin_programs_path }
@@ -55,7 +55,7 @@ class Admin::CompanyInfosController < Admin::BaseController
   end
   
   def update_status
-    @company_info = CompanyInfo.find_using_slug(params[:id])
+    @company_info = CompanyInfo.find(params[:id])
     
     if @company_info.is_present_in_homepage?
       @company_info.is_present_in_homepage = false

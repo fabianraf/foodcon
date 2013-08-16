@@ -23,10 +23,10 @@ set :git_enable_submodules, 1
 
 task :preview do
   set :rails_env, "preview"
-  set :ruby_path, "/usr/local/ruby/bin"
+  set :ruby_path, "/usr/local/bin"
   server "50.116.60.170", :app, :web, :db, :primary => true
   defaults
-  set :default_environment, {'PATH'=> "/usr/local/ruby/bin:$PATH"}
+  set :default_environment, {'PATH'=> "/usr/local/bin:$PATH"}
   set :deploy_via, :remote_cache  
   set :apache_user, "www-data"
   set :apache_group, "dev"
@@ -37,10 +37,10 @@ end
 
 task :production do
   set :rails_env, "production"
-  set :ruby_path, "/usr/local/ruby/bin"
+  set :ruby_path, "/usr/local/bin"
   server "50.116.60.170", :app, :web, :db, :primary => true
   defaults
-  set :default_environment, {'PATH'=> "/usr/local/ruby/bin:$PATH"}
+  set :default_environment, {'PATH'=> "/usr/local/bin:$PATH"}
   set :deploy_via, :remote_cache  
   set :apache_user, "www-data"
   set :apache_group, "dev"
