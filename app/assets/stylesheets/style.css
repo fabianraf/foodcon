@@ -1,0 +1,444 @@
+@font-face{font-family:UniversLTStd-Black;src:url("/assets/UniversLTStd-Black.otf")}   
+@font-face{font-family:UniversLTStd-Light;src:url("/assets/UniversLTStd-Light.otf")}   
+
+body, html{ 
+    margin:0;
+    padding:0;
+    height:100%;
+}
+html,
+* {
+    font-family: UniversLTStd-Light;
+  }
+
+.container{ 
+  min-height:100%;
+  position:relative;
+}
+ 
+
+
+.main-content{
+  max-width: 1000px;
+  -moz-box-sizing: border-box;
+  margin: 0 auto;
+  padding-bottom:230px;   /* Height of the footer */
+  
+}
+
+
+header, footer, section, aside, article, nav {
+  display: block;
+}
+
+header .top-logo{
+  max-width: 1000px;
+  -moz-box-sizing: border-box;
+  margin: 0 auto;
+  float: bottom;
+  
+}
+header .container-carousel{
+  -moz-box-sizing: border-box;
+  background: -webkit-linear-gradient(#a1e048, #6a942f);
+  background: -moz-linear-gradient(#a1e048, #6a942f);
+  background: -ms-linear-gradient(#a1e048, #6a942f);
+  background: -o-linear-gradient(#a1e048, #6a942f);
+  background: linear-gradient(#a1e048, #6a942f);
+  margin: 0 auto;  
+}
+header .container-carousel .carousel{
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  
+}
+header .container-menu{
+  -moz-box-sizing: border-box;
+  background: #4c4e5a;
+	background: -webkit-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -moz-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -o-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -ms-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+  margin: 0 auto;
+  
+}
+header .container-menu .menu{
+  margin: 0 auto;
+  
+  
+}
+
+
+
+/*
+
+HOW TO CREATE A CSS3 DROPDOWN MENU [TUTORIAL]
+
+"How to create a CSS3 Dropdown Menu [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com
+http://vladimirkudinov.com
+
+*/
+
+/* Reset */
+.menu,
+.menu ul,
+.menu li,
+.menu a {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+/* Menu */
+.menu {	
+	height: 40px;
+	width: 605px;
+
+	background: #4c4e5a;
+	background: -webkit-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -moz-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -o-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -ms-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.menu li {
+	position: relative;
+	list-style: none;
+	float: left;
+	display: block;
+	height: 40px;
+  
+}
+
+/* Links */
+
+.menu li a {
+	display: block;
+	padding: 0 14px;
+	margin: 6px 0;
+	line-height: 28px;
+	text-decoration: none;
+	
+	border-left: 1px solid #393942;
+	border-right: 1px solid #4f5058;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+
+	color: #f3f3f3;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+.menu li:first-child a { border-left: none; }
+.menu li:last-child a{ border-right: none; }
+
+.menu li:hover > a { color: #8fde62; }
+
+/* Sub Menu */
+
+.menu ul {
+	position: absolute;
+	top: 40px;
+	
+
+	opacity: 0;
+	
+	background: #1f2024;
+
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+
+	-webkit-transition: opacity .25s ease .1s;
+	-moz-transition: opacity .25s ease .1s;
+	-o-transition: opacity .25s ease .1s;
+	-ms-transition: opacity .25s ease .1s;
+	transition: opacity .25s ease .1s;
+}
+
+.menu li:hover > ul { opacity: 1; }
+
+.menu ul li {
+  height: 0;
+	overflow: hidden;
+  white-space:nowrap; /* <-- ADDED */
+  float:left;
+  width:auto;
+	padding: 0;
+
+	-webkit-transition: height .25s ease .1s;
+	-moz-transition: height .25s ease .1s;
+	-o-transition: height .25s ease .1s;
+	-ms-transition: height .25s ease .1s;
+	transition: height .25s ease .1s;
+}
+
+.menu li:hover > ul li {
+	height: 36px;
+	overflow: visible;
+	padding: 0;
+}
+
+.menu ul li a {
+	width: 100px;
+	padding: 4px 0 4px 40px;
+	margin: 0;
+
+	border: none;
+	border-bottom: 1px solid #353539;
+}
+
+.menu ul li:last-child a { border: none; }
+
+/* Icons */
+
+.menu a.documents { background: url(../img/docs.png) no-repeat 6px center; }
+.menu a.messages { background: url(../img/bubble.png) no-repeat 6px center; }
+.menu a.signout { background: url(../img/arrow.png) no-repeat 6px center; }
+
+
+
+
+
+
+.left_block {
+	display: block;
+  background-color: #fff;
+  /*background-color: green;*/
+  /*border-right: 1px solid;*/
+  /*border-image: url('/assets/right-border.jpg');*/
+  border-right: double 3.5em;
+  border-image: url("/assets/right-border.jpg") 27 round stretch;
+	float: left; 
+  width: 74%;
+  height: auto;
+}
+
+.right_block {
+  display: block;
+  float: right; 
+  width: 20%;  
+}
+.right_block .commitment{
+  padding-top: 20px;
+}
+.right_block p{
+  font-size: 10pt;
+}
+
+.programs1 {
+  position: relative;
+}
+
+hr{
+  border: none;
+  background: url('/assets/first-program-line.png') no-repeat;
+  height: 20px;
+  width: 90%;
+  margin-left: 0px;
+
+}
+hr.division{
+  border: none;
+  background: url('/assets/green-division.png') no-repeat;
+  height: 20px;
+  width: 90%;
+  margin-left: 0px;
+}
+hr.separator{
+  border: none;
+  background: url('/assets/separador.png') no-repeat;
+  height: 20px;
+  width: 100%;
+}
+.indentation-left {
+  margin-left: 38px;
+}
+
+.left {
+	display: block;
+  background-color: #fff;
+	float: left; 
+  padding-bottom: 7px;
+}
+.left.program{
+  width: 300px;
+  height: 300px;
+}
+.right {
+  display: block;
+  background-color: #fff;
+	float: right; 
+}
+.right.program{
+  width: 350px;
+  height: 300px;
+}
+.program{
+  padding-top: 20px;  
+}
+.program p {
+  width: 85%;
+}
+.program a{
+  text-align: right;
+  float: right;
+  margin-right: 0px;
+}
+.image-program{
+  padding: 3px;
+  border: 0.5px;
+  border-style:solid;
+  border-color: #666666;
+  
+}
+.close-to-previous{
+  display: block;
+  background-color: #fff;
+	float: left;
+  padding-left: 40px;
+}
+.close-to-previous p{
+ width: 300px;
+}
+.close-to-previous p.second{
+ width: 350px;
+}
+.form-field input[type=text]{
+  border-radius: 5px;
+  border: 1px solid #8DB730;
+  height: 16px;
+  width: 157px;
+}
+
+.form-field textarea{
+  border-radius: 5px;
+  border: 1px solid #8DB730;
+  width: 157px;
+  height: 80px;
+}
+
+.form-field span{
+  font-size: 9pt
+}
+
+
+/**
+*****
+***** FOOTER
+*****
+*/
+
+footer{
+  position:absolute;
+  bottom: 10px;
+  width:100%;
+  height: 230px;   /* Height of the footer */
+  background:#262626;    
+  
+}
+
+footer .container-footer{
+  max-width: 1000px;
+  -moz-box-sizing: border-box;
+  margin: 0 auto;
+  height: 230px;
+  background-image: url('/assets/footer.png');
+  background-repeat:no-repeat;
+  
+}
+footer .container-footer .footer-menu{
+  float: left;
+  /*border-right: 1px solid #4f5058;*/
+  width: 50%;
+  font-family: UniversLTStd-Light;
+  text-align: center;
+  font-size: 9pt;
+}
+footer .container-footer .footer-menu ul{
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  padding-right: 65px;
+}
+footer .container-footer .footer-menu ul li { 
+  padding: 8px;
+  display: inline; 
+}
+footer .container-footer .footer-menu ul li a { 
+  color: #8fde62;
+}
+
+
+footer .container-footer .contact-us{
+  float: left;
+  color: #8fde62;
+  width: 25%;
+  font-family: UniversLTStd-Light;
+  font-size: 9pt;
+  /*border-right: 1px solid #4f5058;*/
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  
+}
+footer .container-footer .contact-us h1{
+  text-align: right;
+  padding-right: 5px;
+}
+
+footer .container-footer .contact-us .address{
+  color: #EDEDEE;
+  
+  font-size: x-small;
+  text-align: right;
+  padding: 5px;
+}
+footer .container-footer .contact-us .address p{
+  padding: 5px;
+  padding-top: 0;
+}
+
+footer .container-footer .social-links{
+  float: right;
+  width: 24%;
+  height: 100%;
+  top: 100px;
+}
+
+footer .container-footer .social-links .twitter{
+  padding-left: 50px;
+  padding-top: 30px;
+  height: 20%;
+}
+footer .container-footer .social-links .facebook{
+  padding-left: 50px;
+  height: 70%;
+}
+
+.clear-left{
+  clear: left;
+}

@@ -1,36 +1,73 @@
-<div class="large-12 columns">     
-  <table width="460" cellspacing="0" cellpadding="0" border="0" align="center" class="boat_statistics">
-     <tbody><tr>
-       <td width="148"><p><strong>Nombre Completo:</strong></p></td>
-       <td width="292"><p><%= form.text_field :full_name, :class => "field size1" %></p></td>
-     </tr>
-     <tr>
-       <td><p><strong>E-mail:</strong></p></td>
-       <td><p><%= form.text_field :email, :class => "field size1" %></p></td>
-     </tr>
-     <tr>
-       <td><p><strong>País:</strong></p></td>
-       <td><p> <%= form.country_select(:country, ["Ecuador"]) %></p></td>
-     </tr>
-     <tr>
-       <td><p><strong>Ciudad:</strong></p></td>
-       <td><p><%= form.text_field :city, :class => "field size1"  %></p></td>
-     </tr>
-     <tr>
-       <td><p><strong>Provincia:</strong></p></td>
-       <td><p><%= form.text_field :province, :class => "field size1"  %></p></td>
-     </tr>
-     <tr>
-       <td><p><strong>Información de su interés:</strong></p></td>
-       <td>
-         <p>
-            <%= form.select :program_id, options_for_interests.map { |program| [program[1], program[0]]}, {:include_blank => true}, {} %> 
-         </p>
-       </td>
-     </tr>
-     <tr>
-        <td><p><strong>Explíquenos su inquietud:</strong></p></td>
-        <td><p><%= form.text_area :body, {:rows => 10} %></p></td>
-      </tr>
-   </tbody></table>
+<div class="right_block">
+  <div class="commitment">
+    <img src="/assets/exito.png" style="width: 150px;" />
+    <p>
+      Nuestro compromiso es brindarle un servicio de calidad en asesoramiento y capacitación en la industria de alimentos para su satisfacción y la de sus clientes. 
+    </p>
+  </div>
+  <hr class="separator">
+  <div>
+    <p>
+      Nos interesa mucho sus dudas, preguntas, comentarios y sugerencias...
+    </p>
+  </div><br/>
+
+  <form class="contact-us">
+    <img src="/assets/comments-baloon.png" style="margin-right: 0px; margin-left: 110px;" />
+    <div class="form-field">
+      <span class="">Nombre:</span>
+      <p>
+        <%= form.text_field :full_name, :class => "field size1" %>
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Email:</span>
+      <p>
+        <%= form.text_field :email, :class => "field size1" %>
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Pais:</span>
+      <p>
+        <%= form.country_select(:country, ["Ecuador"]) %>
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Ciudad:</span>
+      <p>
+        <%= form.text_field :city, :class => "field size1"  %>
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Provincia:</span>
+      <p>
+        <%= form.text_field :province, :class => "field size1"  %>
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Información de su interés:</span>
+      <p>
+      <%= form.select :program_id, options_for_interests.map { |program| [program[1], program[0]]}, {:include_blank => true}, {} %> 
+      </p>
+    </div>
+    <div class="form-field">
+      <span class="">Mensaje:</span>
+      <p>
+        <%= form.text_area :body %>
+      </p>
+    </div>
+    <input type="submit" value="Enviar">
+  </form>
+  <div style="padding-top: 10px;">
+    <hr class="separator">
+    <p>
+      En Colaboración:
+    </p>
+    <a href="http://www.mundohelado.com">
+      <img src="/assets/mundohelado.jpg" class="image-program" style="width: 180px"/>
+    </a>
+  </div>
 </div>
+
+
+

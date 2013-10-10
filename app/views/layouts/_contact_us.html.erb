@@ -1,0 +1,100 @@
+<div class="right_block">
+          <div class="commitment">
+            <img src="assets/exito.png" style="width: 150px;" />
+            <p>
+              Nuestro compromiso es brindarle un servicio de calidad en asesoramiento y capacitación en la industria de alimentos para su satisfacción y la de sus clientes. 
+            </p>
+          </div>
+          <hr class="separator">
+          <div>
+            <p>
+              Nos interesa mucho sus dudas, preguntas, comentarios y sugerencias...
+            </p>
+          </div><br/>
+          
+          
+          <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
+            
+            <%= render :partial => "contact_us/form", :object => f %>
+            <div class="buttons">
+                <%= f.submit "Enviar" %>
+            </div>
+          <% end %>
+          
+          
+          
+          <form class="contact-us">
+            <img src="assets/comments-baloon.png" style="margin-right: 0px; margin-left: 110px;" />
+            <div class="form-field">
+              <span class="">Nombre:</span>
+              <p>
+              <input type="text" />
+              </p>
+            </div>
+            <div class="form-field">
+              <span class="">Email:</span>
+              <p>
+              <input type="text" />
+              </p>
+            </div>
+            <div class="form-field">
+              <span class="">Pais:</span>
+              <p>
+              <input type="text" />
+              </p>
+            </div>
+            <div class="form-field">
+              <span class="">Telefono:</span>
+              <p>
+              <input type="text" />
+              </p>
+            </div>
+            <div class="form-field">
+              <span class="">Mensaje:</span>
+              <p>
+                <textarea></textarea>
+              </p>
+            </div>
+            <input type="submit" value="Enviar">
+          </form>
+          <div style="padding-top: 10px;">
+            <hr class="separator">
+            <p>
+              En Colaboración:
+            </p>
+            <a href="http://www.mundohelado.com">
+              <img src="assets/mundohelado.jpg" class="image-program" style="width: 180px"/>
+            </a>
+          </div>
+        </div>
+
+
+
+<!-- Thumbnails -->
+
+    <div class="large-8 columns">
+      <div class="row">
+  <div class="large-12 columns">
+          <div class="panel">
+            <div class="row">
+
+              <div class="large-2 small-6 columns">
+                <img src="/assets/mail.png">
+              </div>
+
+              <div class="large-10 small-6 columns">
+                <strong>Contáctenos<hr/></strong>
+                  <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
+                    <%= render :partial => "form", :object => f %>
+                    <div class="buttons">
+                        <%= f.submit "Enviar" %>
+                    </div>
+                  <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- End Thumbnails -->

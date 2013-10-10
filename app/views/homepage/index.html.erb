@@ -1,64 +1,65 @@
-<div class="large-8 columns">
-  <div class="row">
-    <div class="large-12 columns">
-      
-      
-      <%#*<div class="carousel-container">%>
-    
-      <%#*<div id="carousel">%>
-        <%#*<div class="carousel-feature">%>
-          <%#*<a href="#"><img class="carousel-image" alt="Image Caption" src="/assets/sample1.jpg" width="300px"></a>%>
-          <%#*<div class="carousel-caption">%>
-            <%#*<p>%>
-              <%#*This area is typically used to display captions associated with the images. They are set to hide and fade in on rotation.%>
-            <%#*</p>%>
-          <%#*</div>%>
-        <%#*</div>%>
-        <%#*<div class="carousel-feature">%>
-          <%#*<a href="#"><img class="carousel-image" alt="Image Caption" src="/assets/sample2.jpg"></a>%>
-          <%#*<div class="carousel-caption">%>
-            <%#*<p>%>
-              <%#*The background will expand up or down to fit the caption.%>
-            <%#*</p>%>
-          <%#*</div>%>
-        <%#*</div>%>
-        <%#*<div class="carousel-feature">%>
-          <%#*<a href="#"><img class="carousel-image" alt="Image Caption" src="/assets/sample3.jpg"></a>%>
-          <%#*<div class="carousel-caption">%>
-            <%#*<p>%>
-              <%#*Images can be placed here as well.%>
-            <%#*</p>%>
-          <%#*</div>%>
-        <%#*</div>%>
-        <%#*<div class="carousel-feature">%>
-          <%#*<a href="#"><img class="carousel-image" alt="Image Caption" src="/assets/sample4.jpg"></a>%>
-        <%#*</div>%>
-        <%#*<div class="carousel-feature">%>
-          <%#*<a href="#"><img class="carousel-image" alt="Image Caption" src="/assets/sample5.jpg"></a>%>
-          <%#*<div class="carousel-caption">%>
-            <%#*<p>%>
-              <%#*The background color of the caption area can be changed using CSS. The opacity can be changed in the options, but it will also change the opacity of the text.%>
-            <%#*</p>%>
-          <%#*</div>%>
-        <%#*</div>%>
-      <%#*</div>%>
-    
-      <%#*<div id="carousel-left"><img src="/assets/arrow-left.png" /></div>%>
-      <%#*<div id="carousel-right"><img src="/assets/arrow-right.png" /></div>%>
-    <%#*</div>%>
-      
-    </div>
-
-  <div class="row">
-  
+<div class="left_block">
+    <% counter = 0 %>
     <% @programs.each do |program| %>
-      <div class="large-4 small-6 columns">
-        <%= image_tag(program.program_images.first.attachment.url(:original), :width=>'250px') unless program.program_images.blank? %>
-        <div class="panel">
-          <h5><%= link_to program.name, program_path(program) %></h5>
-          <h6 class="subheader"><%= program.short_description %></h6>
-        </div>
+    
+      <div class="program">
+        <% if counter == 0 %>
+
+            <img src="assets/green-line.png"/>
+            <h1 class="indentation-left"><%= program.name %></h1>
+            <hr>
+            <p class="indentation-left">
+              <%= program.short_description %>
+            </p>
+            <p>
+              <%= image_tag(program.program_images.first.attachment.url(:original), :width=>'600px') unless program.program_images.blank? %>
+            </p>
+            <p>
+              <%#= link_to "ver más >>", program_path(program.id) %>
+            </p>
+
+        
+        <% elsif counter == 1 %>
+          <img src="assets/green-line.png"/>
+          <h1 class="indentation-left"><%= program.name %></h1>
+          <hr class="division">
+          <div class="programs1">
+            <% program.program_images.each do |image| %>
+              <div class="left">
+                <%= image_tag(program.program_images.first.attachment.url(:original), {:class => "indentation-left image-program", :width => '130px'}) unless program.program_images.blank? %>
+              </div>
+              <div class="right close-to-previous">
+                <img src="assets/imagen_5.png" class="image-program" style="width: 230px;"/>
+                <p class="second">
+                  <%= program.short_description %>
+                </p>
+              </div>
+              <div style="clear:both"></div>
+            <% end %>
+          </div>
+        <% elsif counter == 2 %> 
+          <div class="program">
+            <img src="assets/green-line.png"/>
+            <h1 class="indentation-left"><%= program.name %></h1>
+            <hr class="division">
+            <div class="programs1">
+              <div class="left">
+                <%= image_tag(program.program_images.first.attachment.url(:original), {:class => "indentation-left image-program", :width => '200px'}) unless program.program_images.blank? %>
+              </div>
+              <div class="right close-to-previous">
+                <img src="assets/imagen_5.png" class="image-program" style="width: 300px;"/>
+                <p class="second">
+                  <%= program.short_description %>
+                </p>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+          </div>
+
+        <% end %>
+        <% counter += 1 %>
       </div>
     <% end %>
-  
-</div>
+    
+
+  </div>

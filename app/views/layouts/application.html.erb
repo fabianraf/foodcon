@@ -10,19 +10,20 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width" />
+    
 
   	<title>FoodCon: <%= @title %></title>
     
-    <%= stylesheet_link_tag    "normalize.css" %>
-    <%= stylesheet_link_tag    "foundation.css" %>
+    <%= stylesheet_link_tag    "style.css" %>
+    <%#= stylesheet_link_tag    "foundation.css" %>
     <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
-      <%= stylesheet_link_tag    "carousel.css" %>
+      <%#= stylesheet_link_tag    "carousel.css" %>
     <% end %>
     
-    <%= javascript_include_tag "custom.modernizr.js" %>
+    <%#= javascript_include_tag "custom.modernizr.js" %>
     
 		
-  	<%= csrf_meta_tags %>
+  	<%#= csrf_meta_tags %>
   	
   </head>
 
@@ -37,52 +38,64 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!-- End Facebook code -->
-    <div class="row">
-      <div class="large-12 columns">
-  
-        <!-- Top Bar -->
+    <div class="container">
+      <!-- Top Bar -->
         <%= render :partial => "layouts/top_bar"%>
-        <!-- End Top Bar --> 
-        <!-- End Navigation -->
- 
-        <div class="row">
-  
-           <!-- Side Bar -->
-         <%= render :partial => "layouts/left_sidebar"%>
-          <!-- End Side Bar -->
-          <%= yield %>
-          <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
-            <%= render :partial => "layouts/comments"%>
-          <% end %>
-        </div>
+      <!-- End Top Bar --> 
+      
+
+      <div class="main-content">
+        <%= yield %>
+        
+        <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
+          <%= render :partial => "/contact_us/form", :object => f %>
+        <% end %>
+        <div style="clear:both"></div>
       </div>
-    </div>
+    
 
-
-    <!-- Footer -->
-
-      <footer class="row">
-        <div class="large-12 columns"><hr />
-          <div class="row">
-
-            <div class="large-6 columns">
-              <p>&copy; Copyright</p>
-            </div>
-
-            <div class="large-6 columns">
-              <ul class="inline-list right">
-                <li><a href="#">Foodcon Colombia</a></li>
-              </ul>
-            </div>
-
+      <footer>
+        
+        <div class="container-footer">
+          <div class="footer-menu">
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Servicios</a></li>
+              <li><a href="#">Cursos</a></li>
+              <li><a href="#">Desarrollo de Productos</a></li>
+              <li><a href="#">Nosotros</a></li>
+            </ul>
           </div>
+
+          <div class="contact-us">
+            <h1>Contacto</h1>
+            <div class="address">
+              <p>De los Guayabos N34-23 y Alamos · Sector Solca</p>
+              <p>Teléfonos: (00593) · 0943234567 - 345675433</p>
+              <p>e-mail: info@foodcon.net</p>
+              <p>Web: www.foodcon.net</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <div class="twitter">
+              <a href="https://www.facebook.com/pages/Foodcon/300068603454072?fref=ts"><img src="assets/twitter.png"  /></a>
+            </div>
+            <div class="facebook">
+              <a href="https://www.facebook.com/pages/Foodcon/300068603454072?fref=ts"><img src="assets/facebook.png"  /></a>
+              <div class="panel">
+                <!--Facebook code -->  
+                <div class="fb-like" data-href="https://www.facebook.com/pages/Food-Consulting/300068603454072?ref=ts&amp;fref=ts" data-send="false" data-width="170" data-show-faces="true"></div>
+                <!-- End Facebook code -->
+              </div>
+            </div>
+            
+          </div>
+
+
         </div>
       </footer>
-
-    <!-- End Footer -->
-
     </div>
-</div>
     <% if Rails.env.production? %>
       <!-- ================================================================
         Google Analytics
@@ -101,7 +114,7 @@
         End Google Analytics
         ============================================================== -->
     <% end %>
-  <%= javascript_include_tag "foundation.min.js" %>
+  <%#= javascript_include_tag "foundation.min.js" %>
   <%= javascript_include_tag "application" %>
   <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
     <%= javascript_include_tag "js/jquery-1.7.min.js" %>

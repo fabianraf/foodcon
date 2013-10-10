@@ -14,7 +14,7 @@ class ContactUsController < ApplicationController
     respond_to do |format| 
       if @contact_us.save                              
         Notifier.send_information(@contact_us).deliver
-        format.html { redirect_to gracias_contact_us_path }
+        format.html { redirect_to "/" }
       else
         format.html { render :new, :locals => {:contact_us => @contact_us} }
         format.xml  { render :xml => @contact_us.errors, :status => :unprocessable_entity }

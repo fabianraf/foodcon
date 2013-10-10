@@ -1,18 +1,22 @@
-<!-- Thumbnails -->
-
-<div class="large-8 columns">
-<div class="row">
-  <div class="large-12 columns">
-    <div class="panel">
-      <h4><%= @program.name %></h4>
+<div class="left_block">
+      <div class="program">
       
-      <div>
-        <%= @program.description.html_safe %>
+            <img src="/assets/green-line.png"/>
+            <h1 class="indentation-left"><%= @program.name %></h1>
+            <hr>
+            
+              
+              <%= @program.description.html_safe %>
+              
+              
+            
+           <%= image_tag(@program.program_images.first.attachment.url(:original)) unless @program.program_images.blank? %>
+              
+
+            
       </div>
-        <%= image_tag(@program.program_images.first.attachment.url(:original)) unless @program.program_images.blank? %>
-      
-    </div>
-  </div>
-</div>
 
-    <!-- End Thumbnails -->
+  </div>
+
+
+

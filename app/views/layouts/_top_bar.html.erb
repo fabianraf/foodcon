@@ -1,53 +1,37 @@
-<div class="row">
-  <div class="large-12 columns">
+<header>
+        <div class="container-header">
+          <div class="top-logo"><a href="#"><img src="assets/foodcon_logo.png" height="130" /></a></div>
+          <div class="container-carousel">
+            <div class="carousel">
+              <img src="assets/comida-baja-en-grasa.jpg" height="180"  />
+            </div>
+          </div>
+          <div class="container-menu">
+            <ul class="menu">
 
-    <nav class="top-bar">
-      <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-          <h1>
-            <%= link_to "Inicio", "/"%>
-          </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-      </ul>
-   
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="divider"></li>
-          <li class="has-dropdown">
-            <a href="#">¿Quiénes somos?</a>
-            <ul class="dropdown">
-              <li><label>Acerca de Nosotros</label></li>
-              <% @company_infos.each do |company_info| %>
-                <li class="#">
-                  <%= link_to company_info.title, company_info_path(company_info) %>
-                </li>
-              <% end %>
-              <li><a href="#">Ver todo &rarr;</a></li>
+             <li><a href="#">Inicio</a></li>
+              <li><a href="#">¿Quiénes somos?</a></li>
+              <li><a href="#">Acerca de Nosotros</a>
+                <ul>
+                  <% @company_infos.each do |company_info| %>
+                    <li>
+                      <%= link_to company_info.title, company_info_path(company_info) %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+              <li><a href="#">Programas</a>
+                <ul>
+                  <% @all_programs.each do |program| %>
+                    <li>
+                      <%= link_to program.name, program_path(program) %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+              
+
             </ul>
-          </li>
-          <li class="divider"></li>
-          <li class="has-dropdown">
-            <a href="#">Servicios</a>
-            <ul class="dropdown">
-              <li><label>Programas</label></li>
-              <% @all_programs.each do |program| %>
-                <li class="#">
-                  <%= link_to program.name, program_path(program) %>
-                </li>
-              <% end %>
-              <li><a href="#">Ver todo &rarr;</a></li>
-            </ul>
-          </li>
-          <li class="divider"></li>
-          <li class="">
-            <%= link_to "Contáctenos", contact_us_path%>
-          </li>
-        </ul>
-      </section>
-    </nav>
-    <!-- End Top Bar -->
-  </div>
-</div>
+          </div>
+        </div>
+      </header>

@@ -6,5 +6,8 @@ class ApplicationController < ActionController::Base
   def load_programs
     @all_programs = Program.all
     @company_infos = CompanyInfo.all
+    @contact_us = ContactUs.new
+    @contact_us.build_program
+    
   end
 end
