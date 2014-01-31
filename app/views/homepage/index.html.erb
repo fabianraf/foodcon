@@ -11,8 +11,8 @@
             <p class="indentation-left">
               <%= program.short_description %>
             </p>
-            <p>
-              <%= image_tag(program.program_images.first.attachment.url(:original), :width=>'600px') unless program.program_images.blank? %>
+            <p class="indentation-left">
+              <%= image_tag(program.program_images.first.attachment.url(:original), :width => '609px', :height => '218px') unless program.program_images.blank? %>
             </p>
             <p>
               <%#= link_to "ver más >>", program_path(program.id) %>

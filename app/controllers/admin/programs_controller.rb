@@ -25,6 +25,7 @@ class Admin::ProgramsController < Admin::BaseController
   
   def edit
     @program = Program.find(params[:id])
+    @program.build_main_image
     @program.program_images.build
   end
   

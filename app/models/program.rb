@@ -1,6 +1,7 @@
 class Program < ActiveRecord::Base
   #is_sluggable :name
   has_many :program_images
+  has_one :main_image
   has_one :contact_us
   accepts_nested_attributes_for :program_images
   scope :actives, where(:is_present_in_homepage => true)

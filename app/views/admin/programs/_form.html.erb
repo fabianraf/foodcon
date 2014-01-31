@@ -2,7 +2,7 @@
 <div class="form">
 <p>
   <span class="req">max 100 caracteres</span>
-  <label>Nombre <span>(Required Field)</span></label>
+  <label>Name <span>(Required Field)</span></label>
   <%= form.text_field :name, :class => "field size1" %>
 </p>	
 <p>
@@ -11,18 +11,43 @@
 </p>
 <p>
   <span class="req">max 255 caracteres</span>
-  <label>Descripción corta <span>(Homepage)</span></label>
+  <label>Short Description <span>(Homepage)</span></label>
   <%= form.text_area :short_description, :class => "field size1" %>
 </p>  
 <p>
-  <label>Descripción</label>
+  <label>Long Description</label>
   <%= form.cktext_area :description, :class => "field size4" %>
 </p>	
+
+  <%= form.fields_for :main_image do |program_image|%>
+    <div class="program_image">
+     <label>Main Image(609x218)</label>
+      <p>
+        <%= program_image.file_field :attachment %>
+      </p>
+    </div>
+  <% end %>
+ 
+<div class="form">
+    <table>
+      <tr>
+        <td><label>Select layout for homepage</label></td>
+        <td>&nbsp;</td>
+        <td>
+          1 <%= form.radio_button :type_of_layout, true %>
+          2 <%= form.radio_button :type_of_layout, false %>
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+
 <p>
-  <label>Imagen de Programa</label><%#= link_to "Añadir Imagen", "javascript:void(0);", :class => "add_new_tour_image" %>
+  <label>Other Images</label><%= link_to "Add Image", "javascript:void(0);", :class => "add_new_image" %>
 </p>
   <%= form.fields_for :program_images do |program_image|%>
-    <div class="tour_image">
+    <div class="program_image">
       <p>
         <%= program_image.file_field :attachment %>
         <% if File.exist?("#{program_image.object.attachment.path}") %>
@@ -31,6 +56,7 @@
       </p>
     </div>
   <% end %>
+
 <%#*<p class="inline-field">%>
         <%#*<label>Date</label>%>
         <%#*<select class="field size2">%>
