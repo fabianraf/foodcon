@@ -15,7 +15,7 @@
   	<title>FoodCon: <%= @title %></title>
     
     <%= stylesheet_link_tag    "style.css" %>
-    <%#= stylesheet_link_tag    "foundation.css" %>
+    <%= stylesheet_link_tag    "foundation.css" %>
     <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
       <%#= stylesheet_link_tag    "carousel.css" %>
     <% end %>
@@ -114,8 +114,8 @@
         End Google Analytics
         ============================================================== -->
     <% end %>
-  <%#= javascript_include_tag "foundation.min.js" %>
-  <%= javascript_include_tag "application" %>
+  
+  
   <% if controller.controller_name == "homepage" && controller.action_name == "index" %>
     <%= javascript_include_tag "js/jquery-1.7.min.js" %>
     <%= javascript_include_tag "jquery.featureCarousel.js" %>
@@ -144,5 +144,10 @@
       </script>
     <% end %>
     <%= content_for :page_specific_javascript %>
+    <%= javascript_include_tag "application.js" %>
+    <%= javascript_include_tag "foundation.min.js" %>
+    <script type="text/javascript">
+            $(document).foundation();
+    </script>
   </body>
 </html>

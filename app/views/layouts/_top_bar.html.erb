@@ -1,37 +1,44 @@
 <header>
-        <div class="container-header">
-          <div class="top-logo"><a href="#"><img src="assets/foodcon_logo.png" height="130" /></a></div>
-          <div class="container-carousel">
-            <div class="carousel">
-              <img src="assets/comida-baja-en-grasa.jpg" height="180"  />
-            </div>
-          </div>
+        
+        	  <div class="row">
+        		<div class="small-12 large-4 columns">
+					<a href="#"><img src="assets/foodcon_logo.png" height="130" /></a>
+				</div>
+	          </div>
+	          <div class="container-carousel">
+	            <div class="row carousel">
+	            	<div class="small-12 large-12 columns">
+	              		<img src="assets/comida-baja-en-grasa.jpg" height="180"  />
+	              	</div>
+	          	</div>
+              </div>
+            
           <div class="container-menu">
-            <ul class="menu">
-
-             <li><a href="#">Inicio</a></li>
-              <li><a href="#">¿Quiénes somos?</a></li>
-              <li><a href="#">Acerca de Nosotros</a>
-                <ul>
-                  <% @company_infos.each do |company_info| %>
-                    <li>
-                      <%= link_to company_info.title, company_info_path(company_info) %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-              <li><a href="#">Programas</a>
-                <ul>
-                  <% @all_programs.each do |program| %>
-                    <li>
-                      <%= link_to program.name, program_path(program) %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-              
-
-            </ul>
+          	<div class="row">
+	            <ul class="menu">
+	             <li><a href="#">Inicio</a></li>
+	              <li><a href="#">¿Quiénes somos?</a></li>
+	              <li><a href="#">Acerca de Nosotros</a>
+	                <ul>
+	                  <% @company_infos.each do |company_info| %>
+	                    <li>
+	                      <%= link_to company_info.title, company_info_path(company_info) %>
+	                    </li>
+	                  <% end %>
+	                </ul>
+	              </li>
+	              <li><a href="#">Programas</a>
+	                <ul>
+	                  <% @all_programs.each do |program| %>
+	                    <li>
+	                      <%= link_to program.name, program_path(program) %>
+	                    </li>
+	                  <% end %>
+	                </ul>
+	              </li>
+	
+	            </ul>
+	          </div>
           </div>
-        </div>
-      </header>
+        
+</header>
