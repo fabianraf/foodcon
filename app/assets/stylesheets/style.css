@@ -202,10 +202,8 @@ http://vladimirkudinov.com
 }
 
 .menu ul li a {
-	width: 100px;
-	padding: 4px 0 4px 40px;
+	width: auto;
 	margin: 0;
-
 	border: none;
 	border-bottom: 1px solid #353539;
 }
