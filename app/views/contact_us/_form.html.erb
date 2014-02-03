@@ -13,50 +13,98 @@
   </div><br/>
 
   <form class="contact-us">
-    <img src="/assets/comments-baloon.png" style="margin-right: 0px; margin-left: 110px;" />
-    <div class="form-field">
-      <span class="">Nombre:</span>
-      <p>
-        <%= form.text_field :full_name, :class => "field size1" %>
-      </p>
+  <div class="row">
+    <div class="large-12 columns">
+    	<img src="/assets/comments-baloon.png" style="margin-right: 0px; margin-left: 110px;" />
     </div>
-    <div class="form-field">
-      <span class="">Email:</span>
-      <p>
-        <%= form.text_field :email, :class => "field size1" %>
-      </p>
+  </div>
+    
+    
+  <div class="row">
+    <div class="large-12 columns">  
+	    <div class="form-field">
+	      <span class="">Nombre:</span>
+	      <p>
+	        <%= form.text_field :full_name, :class => "field size1" %>
+	      </p>
+	    </div>
     </div>
-    <div class="form-field">
-      <span class="">Pais:</span>
-      <p>
-        <%= form.country_select(:country, ["Ecuador"]) %>
-      </p>
+  </div>
+	    
+	    
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Email:</span>
+	      <p>
+	        <%= form.text_field :email, :class => "field size1" %>
+	      </p>
+	    </div>
     </div>
-    <div class="form-field">
-      <span class="">Ciudad:</span>
-      <p>
-        <%= form.text_field :city, :class => "field size1"  %>
-      </p>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Pais:</span>
+	      <p>
+	        <%= form.country_select(:country, ["Ecuador"]) %>
+	      </p>
+	    </div>
     </div>
-    <div class="form-field">
-      <span class="">Provincia:</span>
-      <p>
-        <%= form.text_field :province, :class => "field size1"  %>
-      </p>
+  </div>
+    
+
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Ciudad:</span>
+	      <p>
+	        <%= form.text_field :city, :class => "field size1"  %>
+	      </p>
+	    </div>
     </div>
-    <div class="form-field">
-      <span class="">Información de su interés:</span>
-      <p>
-      <%= form.select :program_id, options_for_interests.map { |program| [program[1], program[0]]}, {:include_blank => true}, {} %> 
-      </p>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Provincia:</span>
+	      <p>
+	        <%= form.text_field :province, :class => "field size1"  %>
+	      </p>
+	    </div>
     </div>
-    <div class="form-field">
-      <span class="">Mensaje:</span>
-      <p>
-        <%= form.text_area :body %>
-      </p>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Información de su interés:</span>
+	      <p>
+	      <%= form.select :program_id, options_for_interests.map { |program| [program[1], program[0]]}, {:include_blank => true}, {} %> 
+	      </p>
+	    </div>
     </div>
-    <input type="submit" value="Enviar">
+  </div>
+    
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <div class="form-field">
+	      <span class="">Mensaje:</span>
+	      <p>
+	        <%= form.text_area :body %>
+	      </p>
+	    </div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="large-12 columns">	    
+	    <input type="submit" value="Enviar" class="small success button" >
+    </div>
+  </div>
+    
   </form>
   <div style="padding-top: 10px;">
     <hr class="separator">

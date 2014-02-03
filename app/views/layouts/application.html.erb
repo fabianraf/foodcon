@@ -45,12 +45,18 @@
       
 
       <div class="main-content">
-        <%= yield %>
+        <div class="row">
+			<div class=" large-9 columns">
+	    	    <%= yield %>
+	        </div>
         
-        <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
-          <%= render :partial => "/contact_us/form", :object => f %>
-        <% end %>
-        <div style="clear:both"></div>
+			<div class=" large-3 columns">
+		        <%= form_for([@contact_us], :url => contact_us_path) do |f| %>
+		          <%= render :partial => "/contact_us/form", :object => f %>
+		        <% end %>
+	        </div>
+        
+        </div>
       </div>
     
 

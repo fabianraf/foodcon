@@ -222,22 +222,23 @@ http://vladimirkudinov.com
 
 
 .left_block {
-	display: block;
   background-color: #fff;
   /*background-color: green;*/
   /*border-right: 1px solid;*/
   /*border-image: url('/assets/right-border.jpg');*/
   border-right: double 3.5em;
   border-image: url("/assets/right-border.jpg") 27 round stretch;
-	float: left; 
+  /*
+  display: block;
+  float: left; 
   width: 74%;
-  height: auto;
+  height: auto;*/
 }
 
 .right_block {
-  display: block;
+/*  display: block;
   float: right; 
-  width: 20%;  
+  width: 20%;  */
 }
 .right_block .commitment{
   padding-top: 20px;
@@ -328,13 +329,13 @@ hr.separator{
   border-radius: 5px;
   border: 1px solid #8DB730;
   height: 16px;
-  width: 157px;
+
 }
 
 .form-field textarea{
   border-radius: 5px;
   border: 1px solid #8DB730;
-  width: 157px;
+
   height: 80px;
 }
 
