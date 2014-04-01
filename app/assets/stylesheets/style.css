@@ -223,7 +223,7 @@ http://vladimirkudinov.com
 
 
 
-.left_block {
+.left_block_delete {
   background-color: #fff;
   /*background-color: green;*/
   /*border-right: 1px solid;*/
@@ -356,16 +356,14 @@ footer{
   position:absolute;
   bottom: 10px;
   width:100%;
-  height: 230px;   /* Height of the footer */
   background:#262626;    
   
 }
 
 footer .container-footer{
-  max-width: 1000px;
   -moz-box-sizing: border-box;
-  margin: 0 auto;
-  height: 230px;
+  
+  height: 100%;
   background-image: url('/assets/footer.png');
   background-repeat:no-repeat;
   
@@ -373,7 +371,6 @@ footer .container-footer{
 footer .container-footer .footer-menu{
   float: left;
   /*border-right: 1px solid #4f5058;*/
-  width: 50%;
   font-family: UniversLTStd-Light;
   text-align: center;
   font-size: 9pt;
@@ -397,11 +394,8 @@ footer .container-footer .footer-menu ul li a {
 footer .container-footer .contact-us{
   float: left;
   color: #8fde62;
-  width: 25%;
   font-family: UniversLTStd-Light;
   font-size: 9pt;
-  /*border-right: 1px solid #4f5058;*/
-  height: 100%;
   padding-top: 10px;
   padding-bottom: 5px;
   
@@ -424,20 +418,15 @@ footer .container-footer .contact-us .address p{
 }
 
 footer .container-footer .social-links{
-  float: right;
-  width: 24%;
-  height: 100%;
-  top: 100px;
+  padding-top: 30px;
 }
 
 footer .container-footer .social-links .twitter{
-  padding-left: 50px;
-  padding-top: 30px;
-  height: 20%;
+
 }
 footer .container-footer .social-links .facebook{
-  padding-left: 50px;
-  height: 70%;
+  
+  
 }
 
 .clear-left{
