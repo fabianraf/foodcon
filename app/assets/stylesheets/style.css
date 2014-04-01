@@ -22,7 +22,7 @@ html,
   max-width: 1000px;
   -moz-box-sizing: border-box;
   margin: 0 auto;
-  padding-bottom:230px;   /* Height of the footer */
+  /* padding-bottom:230px;    Height of the footer */
   
 }
 
@@ -353,8 +353,8 @@ hr.separator{
 */
 
 footer{
-  position:absolute;
-  bottom: 10px;
+  /*position:absolute;
+  bottom: 10px;*/
   width:100%;
   background:#262626;    
   
